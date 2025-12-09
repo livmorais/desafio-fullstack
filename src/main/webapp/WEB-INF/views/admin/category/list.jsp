@@ -8,6 +8,12 @@
     <title>Lista de Categorias</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="/assets/external-libs/bootstrap/css/bootstrap.min.css">
+    <style>
+        .table > tbody > tr > td,
+        .table > thead > tr > th {
+            vertical-align: middle !important;
+        }
+    </style>
 </head>
 
 <div class="container">

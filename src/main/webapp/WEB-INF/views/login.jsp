@@ -23,7 +23,8 @@
         <div class="grid">
             <c:forEach items="${categories}" var="category">
                 <div class="card">
-                    <h3>Escola_ ${category.name}</h3>
+                    <h3>Escola_</h3>
+                    <h4 style="margin: 0;">${category.name}</h4>
                     <p>
                         <c:forEach items="${category.courses}" var="course" varStatus="status">
                             ${course.name}<c:if test="${!status.last}">, </c:if>

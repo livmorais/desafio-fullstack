@@ -19,30 +19,37 @@
 
         <div class="panel-body form-horizontal">
 
-            <div class="row form-group">
-
+            <div class="form-group row">
+                <label class="col-md-3 control-label"><strong>Nome do Curso:</strong></label>
                 <div class="col-md-9">
-                    <label><strong>Nome do Curso:</strong></label>
                     <p class="form-control-static">${course.name()}</p>
                 </div>
+            </div>
 
+            <div class="form-group row">
+                <label class="col-md-3 control-label"><strong>Código:</strong></label>
                 <div class="col-md-9">
-                    <label><strong>Código:</strong></label>
                     <p class="form-control-static">${course.code()}</p>
                 </div>
+            </div>
 
+            <div class="form-group row">
+                <label class="col-md-3 control-label"><strong>Instrutor:</strong></label>
                 <div class="col-md-9">
-                    <label><strong>Instrutor:</strong></label>
                     <p class="form-control-static">${course.instructor().name()}</p>
                 </div>
+            </div>
 
+            <div class="form-group row">
+                <label class="col-md-3 control-label"><strong>Categoria:</strong></label>
                 <div class="col-md-9">
-                    <label><strong>Categoria:</strong></label>
                     <p class="form-control-static">${course.category().name()}</p>
                 </div>
+            </div>
 
+            <div class="form-group row">
+                <label class="col-md-3 control-label"><strong>Status:</strong></label>
                 <div class="col-md-9">
-                    <label><strong>Status:</strong></label>
                     <p class="form-control-static">
                         <c:choose>
                             <c:when test="${course.status() == 'ACTIVE'}">
@@ -54,28 +61,29 @@
                         </c:choose>
                     </p>
                 </div>
+            </div>
 
+            <div class="form-group row">
+                <label class="col-md-3 control-label"><strong>Criado em:</strong></label>
                 <div class="col-md-9">
-                    <label><strong>Descrição:</strong></label>
+                    <p class="form-control-static">${course.createdAt().format(formatter)}</p>
+                </div>
+            </div>
+
+            <c:if test="${course.inactiveAt() != null}">
+                <div class="form-group row">
+                    <label class="col-md-3 control-label"><strong>Inativado em:</strong></label>
+                    <div class="col-md-9">
+                        <p class="form-control-static">${course.inactiveAt().format(formatter)}</p>
+                    </div>
+                </div>
+            </c:if>
+
+            <div class="form-group row">
+                <label class="col-md-3 control-label"><strong>Descrição:</strong></label>
+                <div class="col-md-9">
                     <p class="well">${course.description()}</p>
                 </div>
-
-                <div class="col-md-9">
-                    <label><strong>Criado em:</strong></label>
-                    <p class="form-control-static">
-                        ${course.createdAt().format(formatter)}
-                    </p>
-                </div>
-
-                <c:if test="${course.inactiveAt() != null}">
-                    <div class="col-md-9">
-                        <label><strong>Inativado em:</strong></label>
-                        <p class="form-control-static">
-                            ${course.inactiveAt().format(formatter)}
-                        </p>
-                    </div>
-                </c:if>
-
             </div>
 
             <a class="btn btn-secondary" href="/admin/courses">Voltar</a>

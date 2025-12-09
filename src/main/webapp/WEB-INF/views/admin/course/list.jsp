@@ -8,6 +8,17 @@
     <title>Lista de Cursos</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="/assets/external-libs/bootstrap/css/bootstrap.min.css">
+    <style>
+        .table > tbody > tr > td,
+        .table > thead > tr > th {
+            vertical-align: middle !important;
+        }
+
+        .actions .btn {
+            margin-right: 6px;
+            margin-bottom: 4px;
+        }
+    </style>
 </head>
 
 <body>
@@ -51,7 +62,7 @@
                         </c:choose>
                     </td>
 
-                    <td>
+                    <td class="actions">
                         <a class="btn btn-primary" href="/admin/course/${course.code()}/details">Detalhes</a>
                         <a class="btn btn-primary" href="/admin/course/${course.id()}/edit">Editar</a>
                         <c:choose>
