@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0d1a3a, #001428);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 800px;
+    width: 100%;
+}
+
+.choice-box {
+    background: rgba(0, 35, 90, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.choice-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.choice-box h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #7CFFCB;
+}
+
+.choice-box p {
+    margin-bottom: 1.5rem;
+    color: #cfd8e3;
+    font-size: 1rem;
+}
+
+.choice-btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.3s;
+    color: #000;
+}
+
+.btn-cat {
+    background: #0d6efd;
+}
+
+.btn-cat:hover {
+    background: #0b5ed7;
+}
+
+.btn-course {
+    background: #198754;
+}
+
+.btn-course:hover {
+    background: #157347;
+}
