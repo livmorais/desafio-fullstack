@@ -208,4 +208,14 @@ Body esperado:
 
 **GET /user/all**
 
+### Videos do front e api
+
+https://github.com/user-attachments/assets/22b2c612-33be-493e-be1e-c5cb94c4a158
+
+https://github.com/user-attachments/assets/7331a72b-cbb9-4e9d-9001-378882a0307b
+
+https://github.com/user-attachments/assets/f6b9f0f2-1ecc-4074-a568-85759e5f1bd7
+
+https://github.com/user-attachments/assets/a197ce1b-e8a2-4d89-8a0a-d340d40b1b5c
+
 
