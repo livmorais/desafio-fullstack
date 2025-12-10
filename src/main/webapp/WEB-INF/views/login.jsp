@@ -22,9 +22,10 @@
 
         <div class="grid">
             <c:forEach items="${categories}" var="category">
-                <div class="card">
-                    <h3>Escola_</h3>
-                    <h4 style="margin: 0;">${category.name}</h4>
+                <c:set var="safeColor" value="${empty category.color ? '#7CFFCB' : category.color}" />
+                <div class="card" data-color="${safeColor}">
+                    <h3 class="escola">Escola_</h3>
+                    <h4 class="escola" style="margin: 0;">${category.name}</h4>
                     <p>
                         <c:forEach items="${category.courses}" var="course" varStatus="status">
                             ${course.name}<c:if test="${!status.last}">, </c:if>
@@ -35,5 +36,6 @@
         </div>
     </div>
 </div>
+<script src="/assets/js/color_category.js"></script>
 </body>
 </html>

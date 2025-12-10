@@ -145,20 +145,6 @@
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/assets/external-libs/bootstrap/js/bootstrap.min.js"></script>
-<script>
-function openDetailsModal(code) {
-    $.get(`/admin/course/code/${code}/details`, function(data) {
-        $("#detail-name").text(data.name);
-        $("#detail-code").text(data.code);
-        $("#detail-instructor").text(data.instructor.name);
-        $("#detail-category").text(data.category.name);
-        $("#detail-status").text(data.status === "ACTIVE" ? "Ativo" : "Inativo");
-        $("#detail-description").text(data.description || "—");
-        $("#detail-createdAt").text(data.createdAt || "—");
-        $("#detail-inactiveAt").text(data.inactiveAt || "—");
-        $("#courseDetailsModal").modal("show");
-    });
-}
-</script>
+<script src="/assets/js/course_details.js"></script>
 </body>
 </html>
