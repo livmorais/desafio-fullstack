@@ -25,16 +25,11 @@ public class LoginController {
     @GetMapping("/")
     public String home(Model model) {
 
-        List<Category> categories = categoryRepository.findAll();
-
-        for (Category category : categories) {
-            List<Course> coursesCategory = courseRepository.findByCategory(category);
-            category.setCourses(coursesCategory);
-        }
+        List<Category> categories = categoryRepository.findAllWithCourses();
 
         List<Category> categoriesWithCourses = categories.stream()
-                .filter(c -> c.getCourses() != null && !c.getCourses().isEmpty())
-                .toList();
+            .filter(c -> c.getCourses() != null && !c.getCourses().isEmpty())
+            .toList();
 
         model.addAttribute("categories", categoriesWithCourses);
 

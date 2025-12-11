@@ -21,6 +21,9 @@
         <p>São mais de mil cursos nas seguintes áreas:</p>
 
         <div class="grid">
+            <c:if test="${empty categories}">
+                <p class="no-results">Nenhum curso disponível no momento.</p>
+            </c:if>
             <c:forEach items="${categories}" var="category">
                 <c:set var="safeColor" value="${empty category.color ? '#7CFFCB' : category.color}" />
                 <div class="card" data-color="${safeColor}">
