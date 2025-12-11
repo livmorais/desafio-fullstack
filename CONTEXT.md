@@ -17,7 +17,7 @@ Esse documento descreve todas as rotas disponíveis, organizadas em duas categor
 ### Acesso inicial
 **URL:** `http://localhost:8080/`  
 Exibe a listagem de cursos e categorias, além do botão **Entrar**.
-Obs: exibe apenas as categorias que estão vinculadas a algum curso.
+Obs: exibe apenas as categorias que estão vinculadas a algum curso(ativo).
 
 
 ### Após entrar no sistema

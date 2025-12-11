@@ -9,6 +9,6 @@ import org.springframework.data.jpa.repository.Query;
 public interface CategoryRepository extends JpaRepository<Category, Long> {
     boolean existsByCode(String code);
     Optional<Category> findByCode(String code);
-    @Query("SELECT c FROM Category c LEFT JOIN FETCH c.courses")
-    List<Category> findAllWithCourses();
+    @Query("SELECT DISTINCT c FROM Category c LEFT JOIN FETCH c.courses course WHERE course.status = 'ACTIVE'")
+    List<Category> findAllWithActiveCourses();
 }

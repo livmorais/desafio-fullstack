@@ -8,30 +8,26 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import br.com.alura.projeto.category.Category;
 import br.com.alura.projeto.category.CategoryRepository;
-import br.com.alura.projeto.course.Course;
-import br.com.alura.projeto.course.CourseRepository;
 
 @Controller
 public class LoginController {
 
     private final CategoryRepository categoryRepository;
-    private final CourseRepository courseRepository;
 
-    public LoginController(CategoryRepository categoryRepository, CourseRepository courseRepository) {
+    public LoginController(CategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;
-        this.courseRepository = courseRepository;
     }
 
     @GetMapping("/")
     public String home(Model model) {
 
-        List<Category> categories = categoryRepository.findAllWithCourses();
+        List<Category> categories = categoryRepository.findAllWithActiveCourses();
 
-        List<Category> categoriesWithCourses = categories.stream()
+        List<Category> categoriesWithActiveCourses  = categories.stream()
             .filter(c -> c.getCourses() != null && !c.getCourses().isEmpty())
             .toList();
 
-        model.addAttribute("categories", categoriesWithCourses);
+        model.addAttribute("categories", categoriesWithActiveCourses );
 
         return "login";
     }
