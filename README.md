@@ -147,7 +147,7 @@ Controllers que retornam respostas JSON (via `@RestController`).
 **Body esperado:**
 ```json
 {
-  "courseCode": "java-avançado",
+  "courseCode": "java-mid",
   "studentEmail": "johndoe@gmail.com"
 }
 ```
